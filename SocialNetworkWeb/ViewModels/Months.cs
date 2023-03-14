@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SocialNetworkWeb.ViewModels
 {
@@ -7,17 +11,27 @@ namespace SocialNetworkWeb.ViewModels
         [Display(Name = "Январь")]
         Jan = 1,
         [Display(Name = "Февраль")]
-        Feb = 2,
+        Feb,
         [Display(Name = "Март")]
-        Mar = 3,
-        Apr = 4,
-        May = 5,
-        June = 6,       
-        Jul = 7,
-        Aug = 8,
-        September = 9,      
-        October = 10,
-        November = 11,
-        December = 12,    
+        March,
+        [Display(Name = "Апрель")]
+        April,
+        [Display(Name = "Май")]
+        May,
+        [Display(Name = "Июнь")]
+        June,
+        [Display(Name = "Июль")]
+        July,
+        [Display(Name = "Август")]
+        Aug,
+        [Display(Name = "Сентябрь")]
+        Sept,
+        [Display(Name = "Октябрь")]
+        Oct,
+        [Display(Name = "Ноябрь")]
+        Nov,
+        [Display(Name = "Декабрь")]
+        Dec
     }
 }
+

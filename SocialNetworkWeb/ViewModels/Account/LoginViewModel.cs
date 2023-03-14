@@ -1,20 +1,26 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SocialNetworkWeb.ViewModels.Account
 {
     public class LoginViewModel
     {
-      
         [Required]
-        [Display(Name = "Email")]
+        [EmailAddress]
+        [Display(Name = "Email", Prompt = "Введите email")]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Пароль")]
-        [StringLength(100, ErrorMessage = "Поле {0} должно иметь минимум {2} и максимум {1} символов.", MinimumLength = 5)]
+        [Display(Name = "Пароль", Prompt = "Введите пароль")]
         public string Password { get; set; }
-        public bool RememberMe { get; internal set; }
-        public string ReturnUrl { get; internal set; }
+
+        [Display(Name = "Запомнить?")]
+        public bool RememberMe { get; set; }
+
+        public string ReturnUrl { get; set; }
     }
 }

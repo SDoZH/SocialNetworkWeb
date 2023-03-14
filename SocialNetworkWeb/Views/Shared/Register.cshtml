@@ -1,8 +1,9 @@
-﻿@model ViewModels.Account.RegisterViewModel
-
-@{
+﻿@{
     ViewData["Title"] = "Register";
 }
+@using SocialNetworkWeb.ViewModels;
+
+@model SocialNetworkWeb.ViewModels.Account.RegisterViewModel
 
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>
@@ -32,7 +33,7 @@
             </select>
             <span asp-validation-for="Date" class="text-danger"></span>
 
-            <select asp-for="Month" class="form-control date_control" asp-items="Html.GetEnumSelectList<ViewModels.Months>()" onchange="PopulateDays()" ID="ddlMonth">
+            <select asp-for="Month" class="form-control date_control" asp-items="Html.GetEnumSelectList<SocialNetworkWeb.ViewModels.Months>()" onchange="PopulateDays()" ID="ddlMonth">
                 <option value="">@Model.Month</option>
             </select>
 
@@ -60,7 +61,6 @@
             var ddlMonth = document.getElementById("ddlMonth");
             var ddlYear = document.getElementById("ddlYear");
             var ddlDay = document.getElementById("ddlDay");
-
             var y = ddlYear.options[ddlYear.selectedIndex].value;
             var m = ddlMonth.options[ddlMonth.selectedIndex].value != 0;
             if (ddlMonth.options[ddlMonth.selectedIndex].value != 0 && ddlYear.options[ddlYear.selectedIndex].value != 0) {
@@ -71,7 +71,6 @@
                 }
             }
         }
-
         function AddOption(ddl, text, value) {
             var opt = document.createElement("OPTION");
             opt.text = text;
